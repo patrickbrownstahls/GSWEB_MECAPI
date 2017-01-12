@@ -9,18 +9,20 @@ namespace StahlsCloud_MEC_InventoryAPI.Controllers
 {
     public class ItemsController : ApiController
     {   
+        
         Item[] items = new Item[]
         {
             //Test Item 1 
             //MC200SPGLT001     ID  MC200GFL001  CAD-CUT   20"    Glitter Flake   Black 
             new Item {
+
                 item_attrs = new ItemAttr
                     {
                         business_unit = "ID",
                         business_item_id = "MC200GFL001",
                         business_name = "CAD-CUT   20    Glitter Flake   White",
                         business_description = "Custitemshorname",
-                        business_class_id = "userdef03-userdef03?"
+                        business_class_id = "userdef03-userfed05?"
                     },
                 item_status = "Stocked", // select itemgedsc from iv00101 where itemnmbr  = 'MC200SPGLT001'
                 child_items = new List<Item> { },        //Need to implement child item being returned
@@ -44,6 +46,7 @@ namespace StahlsCloud_MEC_InventoryAPI.Controllers
             //Test Item 2
             //MC200SPGLT168     ID  MC200GFL002  CAD-CUT   20"    Glitter Flake   Black 
             new Item {
+
                 item_attrs = new ItemAttr {business_unit = "ID", business_item_id = "MC200GFL002", business_name = "CAD-CUT   20    Glitter Flake   Black", business_description = "Custitemshorname", business_class_id = "userdef03-userfed05?" },
                 item_status = "Stocked", // select itemgedsc from iv00101 where itemnmbr  = 'MC200SPGLT168'
                 child_items = new List<Item> { },        //Need to implement child item being returned
@@ -63,6 +66,8 @@ namespace StahlsCloud_MEC_InventoryAPI.Controllers
                 quantity_measure = "YARD",      //Deafult unit of measure
                 available_measure = new List<string> {"YARD", "01Yd RL", "05Yd RL", "10Yd RL", "25Yd RL"}, //select * From IV40202  where uomschdl ='MC050YARD' ORDER BY UOFM
                 }
+
+
         };
         public IEnumerable<Item> GetAllItems()
         {
